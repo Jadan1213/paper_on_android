@@ -1,6 +1,6 @@
 # Paper server on Android device!
 
-This guide will show you how you can run a Minecraft Paper server on an Android device.
+This guide will show you how you can run a Minecraft Paper server on an Android device. BE SURE TO BE ON WIFI.
 
 ----------------
 
@@ -69,6 +69,8 @@ Run ```java -version``` to verify that the installation succeeded and Java 21 is
 You should see\
 ![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/cbd3251a-f9e1-4949-ac5d-857c31b6f84e)
 
+### Step five: The main event, installing PAPER!
+
 Now we need to make a directory to store our server files.
 
 Run ```mkdir -p ./minecraft/paper-1.20.6``` to create the directories.\
@@ -76,7 +78,58 @@ Run ```cd minecraft/paper-1.20.6/``` to switch to your new directory.\
 Run ```wget https://api.papermc.io/v2/projects/paper/versions/1.20.6/builds/145/downloads/paper-1.20.6-145.jar``` to download the latest (as of this writing) version of PaperMC. You can find the link for the latest version on [Papermc.io](https://papermc.io/downloads/paper).\
 Run ```echo "eula=true" > eula.txt``` to pre-write the eula file, setting it to true.
 
-.
+Now assuming you crazies have followed along correctly, and haven't given up by this point, lets run our Paper server!
+
+Run ```java -Xmx2G -jar paper-1.20.6-145.jar nogui``` to start the server. If you're using a different version of paper, make sure you use the Jar name of the version you've downloaded! make sure your console shows that you're in the ```~/minecraft/paper1.20.6/``` directory, or the command won't work (this will be different depending on what you named your directory).
+
+You can change the `-Xmx2G` value to allocate a max amount of RAM of your choosing. You'll want to make sure you don't set this too high. Be sure to find out how much RAM your phone has, and make sure you leave plenty available for your phone and java to do their fancy thing. If you allocate too much, you'll end up crashing.
+
+The first start of the server will take considerably longer since files will need to download. Subsequent startups should be faster.
+
+Don't worry about this warning, you should still be able to connect to the server just fine as long as you're on the same Wi-Fi network as your phone. You ARE on Wi-Fi right?.\
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/e0cd4edc-fbde-4327-8b3e-3441e5eb6dd0)
+
+### CONGRATULATIONS, your phone is now running Paper!
+
+Now, open Minecraft Java 1.20.6 on your PC and go to multiplayer
+
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/b2626977-4814-440d-b7cb-7ffd8524a900)
+
+Select `Direct connection`
+
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/f15f1fef-d2c0-480d-a644-eb4527eb8cdd)
+
+Enter your phone's Wi-Fi IP address. You can find this in your android Wi-Fi settings (Google it, this is a minecraft tutorial not a phone settings tutorial). In my case, it's `192.168.30.9`
+
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/b91de7dc-649a-4543-ac52-e16b527b651e)
 
 
+Assuming everything was followed correctly, and there were no errors, you should be logged in!
 
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/3f7d883f-6c88-4f53-acba-f5994c1e94dc)
+
+
+### PLUGINS
+
+Paper supports many wonderful plugins by amazing devs. to install them, go into your plugins directory using ```cd ./plugins``` (your full path, assuming you followed this guide exactly, should be `~/minecraft/paper1.20.6/plugins`)
+
+You can install plugins by downloading them directly using `wget` followed by the URL of the plugin. This will be the download URL for the plugin jar for whichever plugin you're trying to download. For example, to install the Chunky plugin from Modrinth, you would run:
+
+```wget https://cdn.modrinth.com/data/fALzjamp/versions/6ENKPUbu/Chunky-1.4.10.jar```
+
+You will need to `stop` and then launch your server again for the plugins to load.
+
+### WAKELOCK and RUN IN BACKROUND
+
+Since android has many power saving features, you'll want to acquire a wakelock and allow the application to run in the background. The notification bar should show an `Acquire wakelock` button/toggle for Termux.
+
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/943ba626-3da8-47af-a629-833ee23b1b11)
+
+For Battery optimization, you'll want to set the Termux app to `Not optimized`. Getting here will be dependent on your version of android. Google this.
+
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/cc265cf3-8f81-4783-a4db-8650a49ad52e)
+
+## FINAL STEP
+Be sure to call your parents and tell them you love them, and how crazy you are for doing something completely whacko like this. Although I'm sure they already know you're crazy. They can probably recommend you a good pshycologist to see.
+
+Have fun!
