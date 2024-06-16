@@ -66,6 +66,17 @@ Run ```apt update``` to update your repository with the new packages available. 
 Run ```apt install -y temurin-21-jdk``` to install the Java 21 release.
 Run ```java -version``` to verify that the installation succeeded and Java 21 is available.
 
+You should see\
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/cbd3251a-f9e1-4949-ac5d-857c31b6f84e)
+
+Now we need to make a directory to store our server files.
+
+Run ```mkdir -p ./minecraft/paper-1.20.6``` to create the directories.\
+Run ```cd minecraft/paper-1.20.6/``` to switch to your new directory.\
+Run ```wget https://api.papermc.io/v2/projects/paper/versions/1.20.6/builds/145/downloads/paper-1.20.6-145.jar``` to download the latest (as of this writing) version of PaperMC. You can find the link for the latest version on [Papermc.io](https://papermc.io/downloads/paper).\
+Run ```echo "eula=true" > eula.txt``` to pre-write the eula file, setting it to true.
+
+.
 
 
 
