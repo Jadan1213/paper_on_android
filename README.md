@@ -26,7 +26,7 @@ You will be greeted with the Termux terminal screen.
 
 ### Step two: Ok, so we're doin this. Update the Termux package repository
 
-Before we can really have a party, you'll need to update your package repository. You can do this by running ```pkg update``` on the terminal. Once that process completes, it may ask you to upgrade (type Y and hit enter) if it doesn't then run ```pkg upgrade -y``` in order to bring your install up to date. There may be several confirmations asking if you want to overwrite files or leave the current ones, you can just hit enter on these.
+Before we can really have a party, you'll need to update your package repository. You can do this by running ```pkg update``` on the terminal. Once that process completes, it may ask you to upgrade (type Y and hit enter) if it doesn't, then run ```pkg upgrade -y``` in order to bring your install up to date. There may be several confirmations asking if you want to overwrite files or leave the current ones, you can just hit enter on these.
 
 If you get an warning that a package repository isn't selected, you can ignore it. Termux will parse the mirror list and perform the updates anyways.
 
@@ -34,4 +34,38 @@ If you get an warning that a package repository isn't selected, you can ignore i
 
 In order to facilitate this delusion, we need to install linux. We're going to use Proot to run Debian (If you want to run ARCH btw, you can, but you're on your own).
 
-On the Termux terminal, run ```pkg install -y proot```
+On the Termux terminal, run ```pkg install -y proot-distro```
+
+Once the package has been installed, we're going to install Debian.
+
+type ``` pd install debian```. It will take a little time to install all the required files, so take this time to take a break, go outside, touch some grass, take your meds, whatever you want I guess. Once finished, you can enter the Debian OS by typing ```pd login debian```. You should be greeted with the Debian command line.
+
+![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/b62f8370-8c2b-47bb-935b-7baf266a9685)
+
+### Step four: Now the really fun part, we ARE having fun right? Installing Java.
+
+I'm not really a coffee guy, but Java is kinda important here, so we'll need to install it. We're going to use the Eclipse adoptium (Temurin) release of Java. You can view the instructions [Here](https://adoptium.net/installation/linux/) if you want, or follow along with me. Your choice, I won't be offended.
+
+First we need to make sure we have the required packages to install Temurin. Make sure you type everything exact, or it won't work. It's going to be annoying on a phone touchscreen, but hey, you asked for this.
+
+Run ```apt update``` to update your Debian package repositories\
+Run ```apt upgrade -y``` to bring all your current packages up to date\
+Run ```apt install -y wget apt-transport-https gpg``` These may already be present, but we're doing this just to be sure.
+
+Now we need to add the GPG key for our Temurin repository. Keep in mind, that is a capital `O` not a zero after `-q`
+
+Run ```wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor | tee /etc/apt/trusted.gpg.d/adoptium.gpg > /dev/null```
+
+Now we need to add the Temurin repository to our local repository listing. This is going to be a pain typing on a touch screen, so if you have a way to copy/paste it (like from your phone's browser), it will be less of a headache. Don't chicken out now though, I told you this was insane to do.
+
+Run ```echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list```
+
+Now we can actually install Java. We're going to use Java 21 so we can run Paper 1.20.6 in this example.
+
+Run ```apt update``` to update your repository with the new packages available. If you entered anything wrong above, you'll likely get an error at this part of the process. 
+Run ```apt install -y temurin-21-jdk``` to install the Java 21 release.
+Run ```java -version``` to verify that the installation succeeded and Java 21 is available.
+
+
+
+
