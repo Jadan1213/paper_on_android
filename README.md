@@ -4,17 +4,17 @@ This guide will show you how you can run a Minecraft Paper server on an Android 
 
 ----------------
 
-## DISCLAIMER: 
+### DISCLAIMER: 
 You really shouldn't do this. It's not going to run as well as a real machine with more powerful hardware. You do you though. I did it for the fun of it. You don't want to do this. Just don't. Seriously, why am I even writing this? This is crazy!
 
-## BIGGER DISCLAIMER: 
+# BIGGER DISCLAIMER: 
 THIS IS NOT SUPPORTED BY PAPER. Don't do this and expect the brilliant Paper devs to help you. You're the crazy one doing this, not them. They won't have any desire to assist you in your descent into the abyss of instanity.
 
 ----------------
 
 ### Step one: Question your ambitions in life, and install Termux from the Google play store.
 
-To embark on this adventure that will likely end up with you needing a trip to a psycholigist, we're going to need to install the Termux terminal emulator from Google play.
+To embark on this adventure that will likely end up with you needing a trip to a psychologist, we're going to need to install the Termux terminal emulator from Google play.
 
 ![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/d51d4c7c-bc65-44d3-ab78-6074541c2ed8)
 
@@ -32,3 +32,6 @@ If you get an warning that a package repository isn't selected, you can ignore i
 
 ### Step three: Install a linux distribution and fall down the rabbit hole that is superior operating systems.
 
+In order to facilitate this delusion, we need to install linux. We're going to use Proot to run Debian.
+
+On the Termux terminal, run ```pkg install -y proot```
