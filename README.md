@@ -30,5 +30,5 @@ Before we can really have a party, you'll need to update your package repository
 
 If you get an warning that a package repository isn't selected, you can ignore it. Termux will parse the mirror list and perform the updates anyways.
 
-### Step three: Install a linux distrobution and fall down the rabbit hole that is superior operating systems.
+### Step three: Install a linux distribution and fall down the rabbit hole that is superior operating systems.
 
