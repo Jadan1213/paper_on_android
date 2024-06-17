@@ -26,7 +26,7 @@ You will be greeted with the Termux terminal screen.
 
 ### Step two: Ok, so we're doin this. Update the Termux package repository
 
-Before we can really have a party, you'll need to update your package repository. You can do this by running ```pkg update``` on the terminal. Once that process completes, it may ask you to upgrade (type Y and hit enter) if it doesn't, then run ```pkg upgrade -y``` in order to bring your install up to date. There may be several confirmations asking if you want to overwrite files or leave the current ones, you can just hit enter on these.
+Before we can really have a party, you'll need to update your package repository. You can do this by running ```pkg update``` on the terminal. Once that process completes, it may ask you to upgrade (type Y and hit enter), if it doesn't, then run ```pkg upgrade -y``` in order to bring your install up to date. There may be several confirmations asking if you want to overwrite files or leave the current ones, you can just hit enter on these.
 
 If you get an warning that a package repository isn't selected, you can ignore it. Termux will parse the mirror list and perform the updates anyways.
 
