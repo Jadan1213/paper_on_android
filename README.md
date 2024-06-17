@@ -86,7 +86,8 @@ You can change the `-Xmx2G` value to allocate a max amount of RAM of your choosi
 
 The first start of the server will take considerably longer since files will need to download. Subsequent startups should be faster.
 
-Don't worry about this warning, you should still be able to connect to the server just fine as long as you're on the same Wi-Fi network as your phone. You ARE on Wi-Fi right?.\
+Don't worry about this warning, you should still be able to connect to the server just fine as long as you're on the same Wi-Fi network as your phone. You ARE on Wi-Fi right?.
+
 ![image](https://github.com/Jadan1213/paper_on_android/assets/68805162/e0cd4edc-fbde-4327-8b3e-3441e5eb6dd0)
 
 ### CONGRATULATIONS, your phone is now running Paper!
